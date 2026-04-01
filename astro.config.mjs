@@ -1,0 +1,116 @@
+import { defineConfig } from 'astro/config';
+import starlight from '@astrojs/starlight';
+import starlightThemeNova from 'starlight-theme-nova';
+
+export default defineConfig({
+	site: 'https://classeprima.zanardimichael.it',
+	base: '/',
+
+	integrations: [
+		starlight({
+			title: 'Tecnologie Informatiche',
+			logo: {
+				src: './public/favicon.svg',
+			},
+			favicon: './public/favicon.svg',
+			customCss: [
+				'./src/custom.css',
+			],
+			description: 'Dispensa per le classi prime',
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/zanardimichael' }
+			],
+
+			plugins: [
+				starlightThemeNova(),
+			],
+
+			head: [
+				{
+					tag: 'script',
+					content: `
+                        function initProgressBar() {
+                            let bar = document.getElementById('scroll-progress');
+                            if (!bar) {
+                                bar = document.createElement('div');
+                                bar.id = 'scroll-progress';
+                                bar.style.position = 'fixed';
+                                bar.style.top = '0';
+                                bar.style.left = '0';
+                                bar.style.height = '4px';
+                                bar.style.backgroundColor = 'var(--sl-color-accent)'; 
+                                bar.style.zIndex = '9999';
+                                bar.style.width = '0%';
+                                bar.style.transition = 'width 0.1s ease-out';
+                                document.body.appendChild(bar);
+                            }
+                            
+                            window.addEventListener('scroll', () => {
+                                const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                                if (height > 0) {
+                                    const scrolled = (winScroll / height) * 100;
+                                    bar.style.width = scrolled + '%';
+                                } else {
+                                    bar.style.width = '0%';
+                                }
+                            });
+                        }
+                        
+                        document.addEventListener('DOMContentLoaded', initProgressBar);
+                    `
+				}
+			],
+
+			sidebar: [
+				{
+					label: '📚 Corso di Tecnologie Informatiche',
+					items: [
+						{
+							label: 'Introduzione al Corso',
+							link: '/lezioni/',
+						},
+						{
+							label: 'Introduzione all\'informatica',
+							autogenerate: { directory: 'lezioni/introduzione' },
+							collapsed: true,
+						},
+						{
+							label: 'Rappresentazione delle informazioni',
+							autogenerate: { directory: 'lezioni/rappresentazione-informazioni' },
+							collapsed: true,
+						},
+						{
+							label: 'Conversioni',
+							autogenerate: { directory: 'lezioni/conversioni' },
+							collapsed: true,
+						},
+						{
+							label: 'Operatori Logici e Algebra Booleana',
+							autogenerate: { directory: 'lezioni/operatori-logici-algebra-booleana' },
+							collapsed: true,
+						},
+						{
+							label: 'I Sistemi Operativi',
+							autogenerate: { directory: 'lezioni/sistemi-operativi' },
+							collapsed: true,
+						},
+						{
+							label: 'Le reti e internet',
+							autogenerate: { directory: 'lezioni/reti-internet' },
+							collapsed: true,
+						},
+						{
+							label: 'Programmazione informatica',
+							collapsed: true,
+							items: [
+								{ label: 'Le reti', slug: 'lezioni/reti-internet/01-le-reti' },
+								{ label: 'Le reti', slug: 'lezioni/reti-internet/02-internet' },
+							]
+						},
+					]
+				},
+			],
+		}),
+	],
+});
