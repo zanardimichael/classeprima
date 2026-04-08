@@ -23,7 +23,7 @@ Si estende solitamente fino a **10 metri** e ruota attorno a un singolo utente.
 Copre un'area privata come una casa, un ufficio o un edificio (da pochi metri a **qualche chilometro**).
 * **Scopo:** Condivisione di risorse (stampanti, server) e accesso a Internet.
 * **Tecnologie:** **Ethernet** (cavo) e **Wi-Fi** (wireless, spesso chiamata WLAN).
-* **Esempio:** La rete Wi-Fi di casa o la rete cablata di un ufficio aziendale.
+* **Esempio:** La rete Wi-Fi di casa, la rete cablata di un ufficio aziendale o una rete scolastica.
 
 ## 4. MAN (Metropolitan Area Network)
 Interconnette diverse LAN all'interno di un'area urbana (fino a **50-100 km**).
