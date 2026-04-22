@@ -10,9 +10,9 @@ export default defineConfig({
 		starlight({
 			title: 'Tecnologie Informatiche',
 			logo: {
-				src: './public/favicon.svg',
+				src: '/public/favicon.svg',
 			},
-			favicon: './public/favicon.svg',
+			favicon: '/favicon.svg',
 			customCss: [
 				'./src/custom.css',
 			],
