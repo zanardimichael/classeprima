@@ -56,10 +56,10 @@ La dimensione di un video si esprime in pixel (larghezza \* altezza) o indicando
 
 Ecco le risoluzioni principali (osservando la quantità di megapixel per frame):
 
-*   **4K (2160p):** 3840 \* 2160 pixel (circa 8.3 MP).
-*   **1600p:** 2560 \* 1600 pixel (4.1 MP).
-*   **1080p (Full HD):** 1920 \* 1080 pixel (2.1 MP).
-*   **720p (HD):** 1280 \* 720 pixel (0.9 MP).
+*   **4K (2160p):** $3840 \times 2160$ pixel (circa 8.3 MP).
+*   **1600p:** $2560 \times 1600$ pixel (4.1 MP).
+*   **1080p (Full HD):** $1920 \times 1080$ pixel (2.1 MP).
+*   **720p (HD):** $1280 \times 720$ pixel (0.9 MP).
 
 ### Lo streaming e il bitrate
 

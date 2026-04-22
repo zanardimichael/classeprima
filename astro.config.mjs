@@ -1,10 +1,17 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightThemeNova from 'starlight-theme-nova';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 export default defineConfig({
 	site: 'https://classeprima.zanardimichael.it',
 	base: '/',
+
+	markdown: {
+		remarkPlugins: [remarkMath],
+		rehypePlugins: [rehypeKatex],
+	},
 
 	integrations: [
 		starlight({
@@ -14,6 +21,7 @@ export default defineConfig({
 			},
 			favicon: '/favicon.svg',
 			customCss: [
+				'./src/katex.min.css',
 				'./src/custom.css',
 			],
 			description: 'Dispensa per le classi prime',
@@ -99,14 +107,6 @@ export default defineConfig({
 							label: 'Le reti e internet',
 							autogenerate: { directory: 'lezioni/reti-internet' },
 							collapsed: true,
-						},
-						{
-							label: 'Programmazione informatica',
-							collapsed: true,
-							items: [
-								{ label: 'Le reti', slug: 'lezioni/reti-internet/01-le-reti' },
-								{ label: 'Le reti', slug: 'lezioni/reti-internet/02-internet' },
-							]
 						},
 					]
 				},

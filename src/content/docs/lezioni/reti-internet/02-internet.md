@@ -1,167 +1,71 @@
 ---
-title: Costanti e Variabili
-description: Come salvare e gestire i dati in Arduino attraverso costanti e variabili, con i principali tipi di dato in C++.
+title: Internet
+description: Le tecnologie di collegamento della rete globale
 ---
 
-## 💾 Dove vivono i dati?
+## Gli ISP: Internet Service Provider
 
-Ogni programma, anche il più semplice, ha bisogno di ricordare delle informazioni durante la sua esecuzione: la temperatura letta da un sensore, quante volte è stato premuto un pulsante, se un LED è acceso o spento, eccetera...
+### Definizione
 
-In C++, questi dati vengono salvati in due modi diversi a seconda di una domanda fondamentale: ***questo valore cambierà mai durante l'esecuzione del programma?***
+Un Internet Service Provider (ISP), in italiano "Fornitore di Servizi Internet", è un'organizzazione o un'azienda che offre agli utenti (privati o aziende), solitamente dietro pagamento di un abbonamento, l'accesso a Internet e ai servizi correlati.
 
-* Se la risposta è **no** -> si usa una **Costante**
-* Se la risposta è **sì** -> si usa una **Variabile**
+### Funzioni Principali
 
----
+L'ISP funge da intermediario tra il dispositivo dell'utente e la "spina dorsale" (backbone) di Internet. Le sue funzioni includono:
+- Connettività: Fornire il collegamento fisico e logico alla rete globale.
+- Routing: Instradare il traffico dati dell'utente verso la destinazione corretta.
+- Assegnazione Indirizzi IP: Fornire un indirizzo IP (statico o dinamico) necessario per navigare.
+- Servizi Accessori: Hosting di siti web, registrazione di domini e caselle di posta elettronica (E-mail).
 
-## 🔒 Costanti
+## Tecnologia FTTx
 
-Una costante è un valore **fissato una volta per sempre**. Arduino lo legge, lo usa, ma non può mai modificarlo durante l'esecuzione del programma.
+Con FTTx si intendono le varie architetture di collegamento internet fibra misto rame, di seguito la lista delle varie tecnologie con relativi esempi di implementazione:
 
-### Analogia: Il numero civico di casa tua
-Il tuo indirizzo di casa non cambia mentre sei fuori a passeggiare. È scritto sul campanello ed è sempre quello. Una costante funziona allo stesso modo: è un'etichetta fissa che punta sempre allo stesso valore.
+- **FTTH** - *Fiber-to-the-home* (letteralmente "fibra fino a casa"): il collegamento in fibra ottica raggiunge la singola unità abitativa, per esempio una scatola sul muro di una casa. È la soluzione più costosa, ma anche l'investimento a più lungo termine che garantisce la massima velocità di trasmissione fino all'utente finale in previsione di servizi di rete più evoluti.
+- **FTTB** - *Fiber-to-the-building* o *Fiber-to-the-basement* (letteralmente "fibra fino all'edificio" o "fibra fino alle fondamenta"): il collegamento in fibra ottica raggiunge il limite del palazzo o alla schiera, per esempio sino allo scantinato o ai garage per una o più unità abitative (appartamenti o villette), mentre il collegamento finale con l'appartamento rimane su filo di rame oppure con cablaggio in fibre ottiche polimeriche e tecnologia ethernet.
+- **FTTC** o **FTTS** - *Fiber-to-the-cabinet* o *Fiber-to-the-curb* o *Fiber-to-the-street* (letteralmente "fibra fino all'armadio" o "fibra fino al cordolo del marciapiede"): il collegamento (molto simile al **FTTN**) arriva in una cabina esterna molto vicina alla sede dell'utente o al successivo armadio distributore, tipicamente entro 300 metri.
+- **FTTN** - *Fiber-to-the-node* o anche *Fiber-to-the-exchange* (**FTTE**) (letteralmente "fibra fino al nodo" o "fibra fino allo scambio"): il collegamento in fibra ottica arriva in una cabina esterna distante diversi chilometri dalla sede del cliente, cioè tipicamente fino allo stadio di linea della rete telefonica, mentre il collegamento finale rimane su filo di rame.
+- **FTTW** o **FTTR** - Fiber-to-the wireless o Fiber-to-the-radio (letteralmente "fibra fino alla base radio"): la fibra arriva fino a un ponte radio detto anche BTS e viene ricevuta da un'antenna posta sul tetto dell'edificio; questa tecnologia viene spesso usata per portare la fibra ottica dove non è possibile arrivare con il cavo.
 
-### Sintassi: `#define`
+<p style="text-align: center;">
+    <img src="/internet/FTTX.svg" style="display: inline-block" alt="FTTx">
+</p>
 
-Per definire una costante si usa la direttiva `#define`, che va scritta **in cima al file**, prima di tutto il resto.
+<div style="text-align: center;">
 
-```cpp
-// Sintassi: #define NOME valore
-#define RED_LED 5
-#define GREEN_LED 6
-#define BUTTON_PIN 3
-```
+| Tecnologia | Distanza della fibra dal router              | Velocità massima   |
+|------------|----------------------------------------------|--------------------|
+| FTTH       | 0m, il collegamento arriva diretto al router | Fino a 10 Gbps     |
+| FTTB       | Distanza dal router al seminterrato          | Fino a 1 Gbps      |
+| FTTC       | Fino a 300m                                  | Fino a 300 Mbps    |
+| FTTN       | Dai 300m                                     | Dai 25 ai 100 Mbps |
+| FTTW       | Fino a 15km                                  | Fino a 1 Gbps      |
 
-:::danger[Regola fondamentale]
-Usare **sempre** `#define` per indicare ad Arduino a quale pin è collegato un componente elettronico. Un LED o un pulsante, una volta inserito nel circuito, non cambia pin mentre il programma gira: è quindi un'informazione costante per definizione. In questo modo, se un giorno si sposta fisicamente il componente su un pin diverso, basterà modificare **una sola riga** in cima al codice invece di andare a cercare il numero del pin in ogni punto del programma.
+</div>
+
+:::note[Lo sapevi che?]
+Quando ti colleghi al Wi-Fi di casa, il tuo router comunica con l'ISP attraverso un protocollo chiamato PPPoE (Point-to-Point Protocol over Ethernet) per autenticare il tuo abbonamento e permetterti di navigare.
 :::
 
-:::danger[Questione del Punto e Virgola]
-Ogni dichiarazione di variabile deve terminare con `;`. Le righe con `#define` sono le uniche che ***non*** vogliono il punto e virgola alla fine. Dimenticarlo è uno degli errori più comuni.
+## Indirizzi di Rete: IP vs MAC
+Per permettere ai dati di viaggiare correttamente nel web, ogni dispositivo ha bisogno di identificatori univoci. Possiamo paragonarli al sistema postale: uno è il nome del destinatario, l'altro è l'indirizzo della casa. 
+
+### Indirizzo MAC (Media Access Control)
+L'indirizzo MAC è l'indirizzo fisico (o hardware) assegnato univocamente dal produttore alla scheda di rete (NIC).
+- Caratteristiche: È permanente e "scritto" nell'hardware. Non cambia mai, ovunque si trovi il dispositivo.
+- Formato: Composto da 48 bit, solitamente scritto come 6 coppie di cifre esadecimali (es: 00:1A:2B:3C:4D:5E).
+- Livello ISO/OSI: Opera al Livello 2 (Data Link).
+- Scopo: Identificare un dispositivo specifico all'interno di una rete locale (LAN).
+
+### Indirizzo IP (Internet Protocol)
+L'indirizzo IP è l'indirizzo logico assegnato a un dispositivo quando si connette a una rete.
+- Caratteristiche: È dinamico (può variare). Dipende dalla rete a cui sei connesso (es. l'IP di casa è diverso da quello della scuola).
+- Versioni principali:
+  - IPv4: Formato da 32 bit, scritto come 4 numeri decimali, blocco va da 0 a 255 (es: 192.168.1.15).
+  - IPv6: Creato per ovviare alla scarsità di indirizzi IPv4, usa 128 bit (es: 2001:0db8:85a3...).
+- Livello ISO/OSI: Opera al Livello 3 (Network).
+- Scopo: Permettere l'instradamento dei dati tra reti diverse in tutto il mondo.
+
+:::note[Nota bene]
+I livelli ISO/OSI verranno trattati in dettaglio in quarta nella materia Sistemi e Reti
 :::
-
-:::note[Convenzione sui nomi]
-Per le costanti definite con `#define`, la convenzione vuole i nomi scritti tutti in **MAIUSCOLO** con le parole separate da underscore `_`. Non è obbligatorio, ma è un'abitudine seguita dai programmatori.
-:::
-
----
-
-## 📦 Variabili
-
-Una variabile è una "scatola" nella memoria di Arduino a cui diamo un nome. Il contenuto di questa scatola può essere letto e **modificato** quante volte si vuole durante l'esecuzione del programma.
-
-### Analogia: monete in un videogioco
-Pensa a un contatore di monete in un videogioco. Parte da 0, poi sale ogni volta che si raccoglie una moneta, scende se si compra qualcosa, eccetera. Il valore cambia continuamente: è una variabile.
-
-### Come si dichiara una variabile
-
-Per creare una variabile bisogna specificare tre cose:
-1. Il **tipo** di dato che conterrà (numero intero / decimale / vero o falso)
-2. Un **nome** per identificarla
-3. Un **valore**
-
-```cpp
-// Sintassi: tipo nome = valore;
-int monete = 0;
-```
-
----
-
-## 🏷️ Data Types
-
-C++ vuole sapere che tipo di informazione si metterà in una variabile. Questo perché tipi diversi occupano quantità diverse di memoria, e le operazioni che si possono fare su di essi cambiano.
-
-### Numeri Interi: `int`
-
-Usato per numeri **senza virgola**, positivi o negativi. Occupa **2 byte** di memoria, il che gli impone un range preciso di valori rappresentabili.
-
-```
-int -> da -32.768 a +32.767
-```
-
-```cpp
-int contatore = 0;
-int temperatura = -5;
-int livello = 255;
-```
-
-### Numeri Interi Grandi: `long`
-
-Quando i valori da memorizzare superano i limiti di `int`, si usa `long`. Occupa **4 byte** di memoria (il doppio di `int`) e può quindi contenere numeri molto più grandi.
-
-```
-long -> da -2.147.483.648 a +2.147.483.647
-```
-
-```cpp
-long distanzaKm = 384400;       // Distanza Terra-Luna in km
-long millisecondi = 1000000;    // Un milione di ms
-```
-
-:::note[Quando usare `int` o `long`?]
-Per la maggior parte delle variabili su Arduino, `int` è sufficiente. Si passa a `long` solo quando si sa che il valore potrà superare 32.767, come ad esempio contatori che crescono molto, o valori di tempo espressi in millisecondi. Usare `long` quando `int` basterebbe spreca memoria inutilmente.
-:::
-
-:::caution[Usare `long` erroneamente]
-Usare una variabile `long` quando il tipo `int` può bastare in termini di spazio, comporta uno spreco memoria inutile nell'Arduino.
-:::
-
-### Numeri Decimali: `float`
-
-Usato per numeri **con la virgola**. Attenzione: in C++ il separatore decimale è il **punto**, non la virgola.
-
-```cpp
-float temperatura = 23.5;
-float tensione = 3.14;
-```
-
-:::note[Quando usare `int` o `float`?]
-Se il valore può essere solo un numero intero (es. quante volte si preme un pulsante), usa sempre `int`. Il `float` è più pesante da elaborare per Arduino e va usato solo quando la virgola è davvero necessaria, ad esempio con letture di sensori di temperatura.
-:::
-
-### Logica: `bool`
-
-Può contenere **solo due valori**: `true` (vero) oppure `false` (falso). Perfetto per tenere traccia di stati: il LED è acceso o spento? Il pulsante è premuto o no?
-
-```cpp
-bool ledAcceso = false;
-bool allarmeAttivo = true;
-```
-
-### Carattere singolo: `char`
-
-Contiene **un singolo carattere**, scritto tra **apici singoli** `' '`.
-
-```cpp
-char voto = 'A';
-char iniziale = 'M';
-```
-
-### Stringa: `char[]`
-
-Per memorizzare una sequenza di caratteri (una parola, una frase), si usa un <ins>array</ins> di `char`. Il testo va scritto tra **virgolette doppie** `" "`.
-
-Gli <ins>array</ins> li tratteremo più avanti. Detta in breve, un array è un insieme di dati; in questo caso, una stringa è un insieme di caratteri.
-
-```cpp
-char saluto[] = "Ciao mondo";
-char messaggio[] = "Temperatura OK";
-```
-
-:::note[Apici singoli Vs virgolette doppie]
-È una distinzione importante: `'A'` è il singolo carattere A (tipo `char`), mentre `"A"` è una stringa usata per contenere un insieme di caratteri. Confonderli potrebbe causare errori.
-:::
-
----
-
-## 📋 Riepilogo
-
-| Tipo | Cosa contiene | Range | Esempio |
-|---|---|---|---|
-| `#define` | Costante fissa | - | `#define LED_PIN 5` |
-| `int` | Numero intero | -32.768 -> 32.767 | `int contatore = 0;` |
-| `long` | Numero intero grande | -2.147.483.648 -> 2.147.483.647 | `long ms = 100000;` |
-| `float` | Numero decimale | ~3.4×10⁻³⁸ -> ~3.4×10³⁸ | `float temp = 23.5;` |
-| `bool` | Vero o falso | `true` / `false` | `bool acceso = false;` |
-| `char` | Un singolo carattere | - | `char lettera = 'A';` |
-| `char[]` | Una stringa di testo | - | `char msg[] = "Ciao";` |
