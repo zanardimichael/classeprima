@@ -11,6 +11,9 @@ importers:
       '@astrojs/starlight':
         specifier: ^0.38.1
         version: 0.38.1(astro@6.0.5(@types/node@24.12.0)(rollup@4.59.0)(typescript@5.9.3))
+      '@rollup/rollup-win32-arm64-msvc':
+        specifier: ^4.60.1
+        version: 4.60.1
       astro:
         specifier: ^6.0.1
         version: 6.0.5(@types/node@24.12.0)(rollup@4.59.0)(typescript@5.9.3)
@@ -659,6 +662,11 @@ packages:
 
   '@rollup/rollup-win32-arm64-msvc@4.59.0':
     resolution: {integrity: sha512-V5B6mG7OrGTwnxaNUzZTDTjDS7F75PO1ae6MJYdiMu60sq0CqN5CVeVsbhPxalupvTX8gXVSU9gq+Rx1/hvu6A==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@rollup/rollup-win32-arm64-msvc@4.60.1':
+    resolution: {integrity: sha512-i1okWYkA4FJICtr7KpYzFpRTHgy5jdDbZiWfvny21iIKky5YExiDXP+zbXzm3dUcFpkEeYNHgQ5fuG236JPq0g==}
     cpu: [arm64]
     os: [win32]
 
@@ -2513,6 +2521,8 @@ snapshots:
 
   '@rollup/rollup-win32-arm64-msvc@4.59.0':
     optional: true
+
+  '@rollup/rollup-win32-arm64-msvc@4.60.1': {}
 
   '@rollup/rollup-win32-ia32-msvc@4.59.0':
     optional: true

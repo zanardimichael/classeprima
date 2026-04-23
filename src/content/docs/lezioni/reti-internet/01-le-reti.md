@@ -40,5 +40,5 @@ Supera i confini cittadini per coprire intere nazioni o continenti.
 ## 6. GAN (Global Area Network)
 Rappresenta l'infrastruttura di supporto per le comunicazioni su scala planetaria.
 * **Scopo:** Garantire connettività globale costante (militare, scientifica o cloud).
-* **Tecnologie:** Sistemi satellitari (Starlink) e **cavi sottomarini** intercontinentali.
+* **Tecnologie:** Sistemi satellitari (es. Starlink) e **cavi sottomarini** intercontinentali.
 * **Esempio:** La rete satellitare globale che permette la navigazione GPS o la comunicazione in pieno oceano.

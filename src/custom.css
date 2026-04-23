@@ -53,4 +53,5 @@ header.header,
 
 table {
     display: inline-block;
+    text-align: left;
 }

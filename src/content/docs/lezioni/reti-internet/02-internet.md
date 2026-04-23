@@ -25,7 +25,7 @@ Con FTTx si intendono le varie architetture di collegamento internet fibra misto
 - **FTTB** - *Fiber-to-the-building* o *Fiber-to-the-basement* (letteralmente "fibra fino all'edificio" o "fibra fino alle fondamenta"): il collegamento in fibra ottica raggiunge il limite del palazzo o alla schiera, per esempio sino allo scantinato o ai garage per una o più unità abitative (appartamenti o villette), mentre il collegamento finale con l'appartamento rimane su filo di rame oppure con cablaggio in fibre ottiche polimeriche e tecnologia ethernet.
 - **FTTC** o **FTTS** - *Fiber-to-the-cabinet* o *Fiber-to-the-curb* o *Fiber-to-the-street* (letteralmente "fibra fino all'armadio" o "fibra fino al cordolo del marciapiede"): il collegamento (molto simile al **FTTN**) arriva in una cabina esterna molto vicina alla sede dell'utente o al successivo armadio distributore, tipicamente entro 300 metri.
 - **FTTN** - *Fiber-to-the-node* o anche *Fiber-to-the-exchange* (**FTTE**) (letteralmente "fibra fino al nodo" o "fibra fino allo scambio"): il collegamento in fibra ottica arriva in una cabina esterna distante diversi chilometri dalla sede del cliente, cioè tipicamente fino allo stadio di linea della rete telefonica, mentre il collegamento finale rimane su filo di rame.
-- **FTTW** o **FTTR** - Fiber-to-the wireless o Fiber-to-the-radio (letteralmente "fibra fino alla base radio"): la fibra arriva fino a un ponte radio detto anche BTS e viene ricevuta da un'antenna posta sul tetto dell'edificio; questa tecnologia viene spesso usata per portare la fibra ottica dove non è possibile arrivare con il cavo.
+- **FTTW** o **FTTR** - *Fiber-to-the-wireless* o *Fiber-to-the-radio* (letteralmente "fibra fino alla base radio"): la fibra arriva fino a un ponte radio detto anche BTS e viene ricevuta da un'antenna posta sul tetto dell'edificio; questa tecnologia viene spesso usata per portare la fibra ottica dove non è possibile arrivare con il cavo.
 
 <p style="text-align: center;">
     <img src="/internet/FTTX.svg" style="display: inline-block" alt="FTTx">
@@ -66,6 +66,10 @@ L'indirizzo IP è l'indirizzo logico assegnato a un dispositivo quando si connet
 - Livello ISO/OSI: Opera al Livello 3 (Network).
 - Scopo: Permettere l'instradamento dei dati tra reti diverse in tutto il mondo.
 
-:::note[Nota bene]
+La versione IPv4 è stata creata nel 1981, al tempo non era previsto un largo utilizzo del protocollo e alla crescita 
+del numero di indirizzi IP, è stato deciso di creare una nuova versione con uno spazio di indirizzamento maggiore.
+IPv4 può indirizzare fino a 4.294.967.296 dispositivi, IPv6 fino a $3,4 \times 10^{38}$ dispositivi.
+
+:::caution[Nota bene]
 I livelli ISO/OSI verranno trattati in dettaglio in quarta nella materia Sistemi e Reti
 :::
