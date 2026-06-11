@@ -1,5 +1,5 @@
 {
-  "name": "Dispensa Tecnologie Informatiche",
+  "name": "dispensa-tecnologie-informatiche",
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@9.1.0",
@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/starlight": "^0.38.1",
     "@rollup/rollup-win32-arm64-msvc": "^4.60.1",
-    "astro": "^6.0.1",
+    "astro": "6.1.6",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "sharp": "^0.34.2",

@@ -108,6 +108,10 @@ export default defineConfig({
 							autogenerate: { directory: 'lezioni/reti-internet' },
 							collapsed: true,
 						},
+						{
+							label: 'Educazione civica',
+							slug: 'lezioni/educazione-civica',
+						},
 					]
 				},
 			],
