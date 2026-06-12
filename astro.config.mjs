@@ -28,6 +28,13 @@ export default defineConfig({
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/zanardimichael' }
 			],
+			defaultLocale: 'root',
+			locales: {
+				root: {
+					label: 'Italiano',
+					lang: 'it', // Associa la lingua italiana alla radice del sito
+				},
+			},
 
 			plugins: [
 				starlightThemeNova(),
