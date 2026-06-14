@@ -35,10 +35,10 @@ $1011_2 = 1 \cdot 8 + 0 \cdot 4 + 1 \cdot 2 + 1 \cdot 1 = 8 + 0 + 2 + 1 = 11_{10
 ### Da Decimale a Binario (Metodo delle divisioni successive)
 Per spiegare un nostro numero al computer, dobbiamo convertirlo in base 2. Il metodo più semplice è dividere continuamente il numero decimale per 2 e annotare i **resti**.
 Convertiamo il numero $13_{10}$:
-*   $13 / 2 = 6$ con resto di **1**
-*   $6 / 2 = 3$ con resto di **0**
-*   $3 / 2 = 1$ con resto di **1**
-*   $1 / 2 = 0$ con resto di **1**
+*   $13 \div 2 = 6$ con resto di **1**
+*   $6 \div 2 = 3$ con resto di **0**
+*   $3 \div 2 = 1$ con resto di **1**
+*   $1 \div 2 = 0$ con resto di **1**
 
 Una volta arrivati a 0, ci fermiamo e **leggiamo i resti dal basso verso l'alto**. Otteniamo così:
 $13_{10} = 1101_2$

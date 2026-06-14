@@ -101,8 +101,8 @@ export default defineConfig({
 							collapsed: true,
 						},
 						{
-							label: 'Operatori Logici e Algebra Booleana',
-							autogenerate: { directory: 'lezioni/operatori-logici-algebra-booleana' },
+							label: 'Programmazione',
+							autogenerate: { directory: 'lezioni/programmazione' },
 							collapsed: true,
 						},
 						{
