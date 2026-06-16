@@ -8,7 +8,7 @@ Mentre un elettrodomestico come la lavatrice è una macchina *special purpose* (
 Il suo scopo principale è elaborare enormi quantità di **dati** (elementi grezzi come numeri o testi) ad altissima velocità, per trasformarli in **informazioni** utili e organizzate.
 
 Un computer è formato da due "anime" inseparabili: l'**Hardware** e il **Software**.
-Per capire la differenza, immagina un pianoforte: il pianoforte fisico, con i suoi tasti e le sue corde, rappresenta l'hardware (la parte meccanica, elettronica e "dura" che si può letteralmente toccare); la musica che viene suonata, invisibile ma fondamentale, rappresenta il software (i programmi e i dati).
+Per capire la differenza, immagina un pianoforte: il pianoforte fisico, con i suoi tasti e le sue corde, rappresenta l'hardware (la parte meccanica, elettronica e "dura" che si può letteralmente toccare, oppure prendere a calci); la musica che viene suonata, invisibile ma fondamentale, rappresenta il software (i programmi e i dati).
 
 ## L'Architettura di Von Neumann (Hardware)
 Tutti i computer moderni, dai grandi server aziendali fino ai nostri smartphone, funzionano seguendo un modello teorico geniale inventato negli anni '40 dal matematico John von Neumann.
