@@ -47,7 +47,7 @@ $13_{10} = 1101_2$
 
 Vogliamo convertire il numero $345$ in binario.
 
-Per ogni divisione per due segnamo alla destra il resto della divisione:
+Per ogni divisione per due segnamo sulla destra il resto della divisione:
 
 <div style="max-width: min(20%, 200px);">
     <img src="/rappresentazione-numeri/conversione-decimale-binario.png"/>
@@ -72,7 +72,7 @@ Esempio con $2F_{16}$:
 * $2F_{16} = 2 \cdot 16 + 15 \cdot 1 = 32 + 15 = 47_{10}$
 
 ### La magia: conversione diretta Binario ↔ Esadecimale
-Convertire tra base 2 e base 16 è facilissimo, senza nemmeno passare per il decimale! Basta raggruppare i bit a gruppi di 4, partendo da destra.
+Convertire tra base 2 e base 16 è facilissimo, senza nemmeno passare per il decimale. Basta raggruppare i bit a gruppi di 4, partendo da destra.
 Immagina di avere questo lungo Byte: $10110101_2$
 1. Lo dividiamo in due blocchi da 4 bit: $1011$ e $0101$
 2. Traduciamo ogni blocco:

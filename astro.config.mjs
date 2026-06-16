@@ -86,8 +86,8 @@ export default defineConfig({
 							link: '/lezioni/',
 						},
 						{
-							label: 'Introduzione all\'informatica',
-							autogenerate: { directory: 'lezioni/introduzione' },
+							label: 'L\'informatica dalle origini ai giorni nostri',
+							autogenerate: { directory: 'lezioni/informatica' },
 							collapsed: true,
 						},
 						{
