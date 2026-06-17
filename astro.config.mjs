@@ -96,11 +96,6 @@ export default defineConfig({
 							collapsed: true,
 						},
 						{
-							label: 'Conversioni',
-							autogenerate: { directory: 'lezioni/conversioni' },
-							collapsed: true,
-						},
-						{
 							label: 'Programmazione',
 							autogenerate: { directory: 'lezioni/programmazione' },
 							collapsed: true,

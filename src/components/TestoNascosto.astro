@@ -1,0 +1,73 @@
+---
+// src/components/TestoNascosto.astro
+interface Props {
+    label?: string;
+}
+
+const { label = "Clicca per mostrare il contenuto" } = Astro.props;
+---
+
+<div class="testo-nascosto-container">
+	<button class="trigger-btn">{label}</button>
+
+	<div class="content hidden">
+		<slot />
+	</div>
+</div>
+
+<script>
+    const containers = document.querySelectorAll('.testo-nascosto-container');
+
+    containers.forEach(container => {
+        const button = container.querySelector('.trigger-btn');
+        const content = container.querySelector('.content');
+
+        if (button && content) {
+            button.addEventListener('click', () => {
+                content.classList.remove('hidden');
+                button.remove();
+            });
+        }
+    });
+</script>
+
+<style>
+    .testo-nascosto-container {
+		margin: 0.5rem 0;
+		padding: 0.5rem;
+        border: 1px dashed var(--sl-color-hairline);
+        border-radius: 0.5rem;
+        background-color: var(--sl-color-bg-inline-code);
+		width: fit-content;
+    }
+
+    .trigger-btn {
+        background-color: var(--sl-color-accent-high);
+        color: var(--sl-color-text-invert);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: var(--sl-text-sm);
+        transition: background-color 0.2s ease;
+    }
+
+    .trigger-btn:hover {
+        background-color: var(--sl-color-accent);
+    }
+
+    .content.hidden {
+        display: none;
+    }
+
+    .content {
+        /* Animazione leggera quando appare */
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
