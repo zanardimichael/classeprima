@@ -16,19 +16,22 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import {Card, CardGrid} from '@astrojs/starlight/components';
+import LinkCard from '/src/components/LinkCard.astro';
 
 ## Contenuti del Corso
 
 <CardGrid stagger>
-	<Card title="L'informatica dalle origini ai giorni nostri" icon="laptop">
-	</Card>
-	<Card title="Rappresentazione dei dati in digitale" icon="seti:vite">
-	</Card>
-	<Card title="I Sistemi Operativi" icon="seti:windows">
-	</Card>
-	<Card title="Le reti e internet" icon="rss">
-	</Card>
-	<Card title="Programmazione" icon="seti:json">
-	</Card>
+	<LinkCard href="/lezioni/informatica/01-origine-e-storia/" title="L'informatica dalle origini ai giorni nostri" icon="laptop">
+	</LinkCard>
+	<LinkCard href="/lezioni/rappresentazione-informazioni/01-analogico-digitale/" title="Rappresentazione dei dati in digitale" icon="seti:vite">
+	</LinkCard>
+    <LinkCard href="/lezioni/programmazione/01-operatori-e-algebra-booleana/" title="La programmazione" icon="seti:json">
+    </LinkCard>
+	<LinkCard href="/lezioni/sistemi-operativi/01-ruolo-e-funzionalita/" title="I Sistemi Operativi" icon="seti:windows">
+	</LinkCard>
+	<LinkCard href="/lezioni/reti-internet/01-le-reti/" title="Le reti e internet" icon="rss">
+	</LinkCard>
+    <LinkCard href="/lezioni/reti-internet/01-le-reti/" title="Le reti e internet" icon="rss">
+    </LinkCard>
 </CardGrid>
